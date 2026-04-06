@@ -11,9 +11,9 @@ do
     # INSTANCE_ID=$(aws ec2 run-instances --image-id $AMI_ID --instance-type t3.micro --security-group-ids $SG_ID --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$instance}]" --query 'Instances[0].InstanceId' --output text)
 
     if [ $instance = frontend ]; then 
-        IpAddress=$(aws ec2 describe instances --instance_id $Instance_Id --query "Reservations[0].Instances[0].PublicIpAddress" --outpu text)
+        IpAddress=$(aws ec2 describe-instances --instance_id $Instance_Id --query "Reservations[0].Instances[0].PublicIpAddress" --outpu text)
     else
-        IpAddress=$(aws ec2 describe instances --instance_id $Instance_Id --query "Reservations[0].Instances[0].PrivateIpAddress" --outpu text)
+        IpAddress=$(aws ec2 describe-instances --instance_id $Instance_Id --query "Reservations[0].Instances[0].PrivateIpAddress" --outpu text)
 
     fi
     echo "$instance: $IpAddress"
