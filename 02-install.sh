@@ -1,7 +1,9 @@
 #!/bin/bash
 
 AMI_ID="ami-0220d79f3f480ecf5"
-SG_ID="sg-051b1f8e584ea35b8"
+SG_ID="sg-051b1f8e584ea="l35b8"
+ZONE_ID="Z079516023DG9ZEN0RSC9"
+DOMAIN_NAMEearnwithmahaboob.cyou"
 
 
 for instance in $@
@@ -10,11 +12,29 @@ do
 
     if [ $instance != "frontend" ]; then
         Ip=$(aws ec2 describe-instances --instance-id $INSTANCE_ID --query "Reservations[0].Instances[0].PrivateIpAddress" --output text)
+        RECORD_NAME=$instance.$DOMAIN_NAME #mongodb.learnwithmahaboob.cyou
     else
         Ip=$(aws ec2 describe-instances --instance-id $INSTANCE_ID --query "Reservations[0].Instances[0].PublicIpAddress" --output text)
+        RECORD_NAME=$DOMAIN_NAME #learnwithmahaboob.cyou
     fi
 
     echo "$instance:$Ip"
+
+
+    aws route53 change-resource-record-sets \
+    --hosted-zone-id $ZONE_ID \
+    --change-batch '{
+        "Comment": "Updating A record",
+        "Changes": [{
+            "Action": "UPSERT",
+            "ResourceRecordSet": {
+                "Name": "$RECORD_NAME",
+                "Type": "A",
+                "TTL": 1,
+                "ResourceRecords": [{ "$Ip" }]
+            }
+        }]
+    }'
 
     
 
