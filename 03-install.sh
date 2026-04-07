@@ -19,7 +19,7 @@ INSTANCE_ID=$(aws ec2 run-instances --image-id $AMI_ID --instance-type t3.micro 
     aws route53 change-resource-record-sets \
     --hosted-zone-id $ZONE_ID \
     --change-batch '{
-        "Comment": "Updating A record for "$instance"",
+        "Comment": "Updating A record",
         "Changes": [{
             "Action": "UPSERT",
             "ResourceRecordSet": {
