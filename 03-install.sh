@@ -26,7 +26,9 @@ INSTANCE_ID=$(aws ec2 run-instances --image-id $AMI_ID --instance-type t3.micro 
                 "Name": "'$RECORD_NAME'",
                 "Type": "A",
                 "TTL": 1,
-                "ResourceRecords": [{ '"$Ip"' }]
+                "ResourceRecords": [{ 
+                    "Value": '"$IP"' 
+                    }]
             }
         }]
     }'
