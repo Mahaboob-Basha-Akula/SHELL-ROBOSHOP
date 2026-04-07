@@ -23,10 +23,10 @@ INSTANCE_ID=$(aws ec2 run-instances --image-id $AMI_ID --instance-type t3.micro 
         "Changes": [{
             "Action": "UPSERT",
             "ResourceRecordSet": {
-                "Name": "$RECORD_NAME",
+                "Name": "'$RECORD_NAME'",
                 "Type": "A",
                 "TTL": 1,
-                "ResourceRecords": [{ "$Ip" }]
+                "ResourceRecords": [{ '"$Ip"' }]
             }
         }]
     }'
