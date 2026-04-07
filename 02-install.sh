@@ -1,7 +1,7 @@
 #!/bin/bash
 
 AMI_ID="ami-0220d79f3f480ecf5"
-SG_ID="sg-051b1f8e584ea="l35b8"
+SG_ID="sg-0cb74036ffa409ec3"
 ZONE_ID="Z079516023DG9ZEN0RSC9"
 DOMAIN_NAME="learnwithmahaboob.cyou"
 
