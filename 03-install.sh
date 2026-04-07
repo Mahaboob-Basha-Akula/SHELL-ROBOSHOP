@@ -11,8 +11,10 @@ INSTANCE_ID=$(aws ec2 run-instances --image-id $AMI_ID --instance-type t3.micro 
 
     if [ $instance = frontend ]; then
         IP=$(aws ec2 describe-instances --instance-id $INSTANCE_ID --query "Reservations[0].Instances[0].PublicIpAddress" --output text)
+        RECORD_NAME=$DOMAIN_NAME
     else
         IP=$(aws ec2 describe-instances --instance-id $INSTANCE_ID --query "Reservations[0].Instances[0].PrivateIpAddress" --output text)
+        RECORD_NAME=$instance.$DOMAIN_NAME
     fi
     echo "$instance:$IP"
 
