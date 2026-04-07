@@ -22,7 +22,7 @@ VALIDATE(){
     fi
 }
 
-cp /SHELL-ROBOSHOP/mongo.repo /etc/yum.repos.d/mongo.repo
+cp /Shell-script/SHELL-ROBOSHOP/mongo.repo /etc/yum.repos.d/mongo.repo
 VALIDATE $? "Adding mongo repo"
 
 
