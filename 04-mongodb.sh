@@ -16,12 +16,13 @@ fi
 VALIDATE(){
     if [ $1 -ne  0 ]; then
         echo -e " Installation of $2 $R Failed $N"
+        exit  1
     else
         echo -e " Installation of $2 $G Success $N"
     fi
 }
 
-cp mongo.repo /etc/yum.repos.d/mongo.repo
+cp /SHELL-ROBOSHOP/mongo.repo /etc/yum.repos.d/mongo.repo
 VALIDATE $? "Adding mongo repo"
 
 
