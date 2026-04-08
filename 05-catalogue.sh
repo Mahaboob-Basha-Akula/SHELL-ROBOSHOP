@@ -70,7 +70,7 @@ npm install &>>$LOG_FILE
 VALIDATE $? "installion of dependencies"
 
 
-cp $SCRIPT_DIR/catalogue.service vim /etc/systemd/system/catalogue.service 
+cp $SCRIPT_DIR/catalogue.service  /etc/systemd/system/catalogue.service 
 VALIDATE $? "coping the systemctl service"
 
 systemctl daemon-reload 
