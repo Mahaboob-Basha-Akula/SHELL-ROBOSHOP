@@ -86,6 +86,7 @@ VALIDATE $? "copying mongo repo"
 dnf install mongodb-mongosh -y &>>$LOG_FILE
 VALIDATE $? "mongodb-client install"
 
+# mongosh --host $MONGODB_HOST </app/db/master-data.js &>>$LOG_FILE
 mongosh --host $MONGODB_HOST </app/db/master-data.js &>>$LOG_FILE
 VALIDATE $? "Load catalogue products"
 
