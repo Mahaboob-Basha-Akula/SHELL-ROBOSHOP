@@ -7,6 +7,7 @@ Y="\e[33m"
 P="\e[35m"
 
 MONGODB_HOST="monogodb.learnwithmahaboob.cyou"
+SCRIPT_DIR=$PWD
 
 LOG_FOLDER="/var/log/shell-catalogue"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
@@ -23,6 +24,7 @@ mkdir -p $LOG_FOLDER
 VALIDATE(){
     if [ $1 -ne 0 ]; then
         echo -e "$2 $R FAILED $N"
+        exit 1
     else
         echo -e "$2 $G SUCCESS $N"
     fi
@@ -59,7 +61,8 @@ VALIDATE $? "changing to app directory"
 npm install &>>$LOG_FILE
 VALIDATE $? "installion of dependencies"
 
-cp catalogue.service vim /etc/systemd/system/catalogue.service 
+
+cp $SCRIPT_DIR/catalogue.service vim /etc/systemd/system/catalogue.service 
 VALIDATE $? "coping the systemctl service"
 
 systemctl daemon-reload 
