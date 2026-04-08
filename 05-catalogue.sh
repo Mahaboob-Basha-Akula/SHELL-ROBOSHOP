@@ -6,7 +6,7 @@ G="\e[32m"
 Y="\e[33m"
 P="\e[35m"
 
-MONGODB_HOST="monogodb.learnwithmahaboob.cyou"
+MONGODB_HOST=monogodb.learnwithmahaboob.cyou
 SCRIPT_DIR=$PWD
 
 LOG_FOLDER="/var/log/shell-catalogue"
