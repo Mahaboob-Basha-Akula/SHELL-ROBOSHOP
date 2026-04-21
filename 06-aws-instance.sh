@@ -15,7 +15,7 @@ do
         RECORD_NAME=$DOMAIN_NAME
     else
         INSTANCE_IP=$(aws ec2 describe-instances --instance-ids $INSTANCE_ID --query "Reservations[0].Instances[0].PrivateIpAddress" --output text)
-        RECORD_NAME=$instance.$DOMAIN_NAME
+        RECORD_NAME=$instances.$DOMAIN_NAME
     fi
     echo "$instances: $INSTANCE_IP"
 
