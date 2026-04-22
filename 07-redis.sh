@@ -19,6 +19,8 @@ if [ $USER_ID -ne 0 ]; then
     exit 1
 fi
 
+mkdir -p $LOG_FOLDER
+
 VALIDATE(){
     if [ $1 -ne  0 ]; then
         echo -e " $G $2 success $N"
@@ -28,7 +30,7 @@ VALIDATE(){
 }
 
 
-mkdir -p $LOG_FOLDER
+
 
 
 dnf module disable redis -y &>>$LOG_FILE
@@ -41,7 +43,7 @@ VALIDATE $? "installing redis"
 
 
 sed -i -e 's/127.0.0.0/0.0.0.0/g' -e '/protected-mode/ c protected-mode no' /etc/redis/redis.conf
-VALIDATE $? "iAllowing network to redis"
+VALIDATE $? "Allowing network to redis"
 
 
 systemctl enable redis &>>$LOG_FILE
