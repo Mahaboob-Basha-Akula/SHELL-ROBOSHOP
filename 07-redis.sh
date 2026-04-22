@@ -23,9 +23,9 @@ mkdir -p $LOG_FOLDER
 
 VALIDATE(){
     if [ $1 -ne  0 ]; then
-        echo -e " $G $2 success $N"
+        echo -e " $G $2 FAILED $N"
     else
-        echo -e "$R $2 failed $N"
+        echo -e "$R $2 SUCCESS $N"
     fi
 }
 
