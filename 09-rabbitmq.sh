@@ -18,6 +18,7 @@ if [ $USER_ID -ne 0 ]; then
     echo -e "$R ERROR:: Need root privilages $N"
     exit 1
 fi
+mkdir -p $LOG_FOLDER
 
 VALIDATE(){
     if [ $? -ne 0 ]; then 
@@ -27,7 +28,7 @@ VALIDATE(){
     fi
 }
 
-mkdir -p $LOG_FOLDER
+
 
 cp $SCRIPT_DIR/rabbitmq.repo /etc/yum.repos.d/rabbitmq.repo &>>$LOG_FILE
 
