@@ -28,6 +28,8 @@ VALIDATE(){
 
 mkdir -p $LOG_FOLDER
 
+cp rabbitmq.repo /etc/yum.repos.d/rabbitmq.repo &>>$LOG_FILE
+
 dnf install rabbitmq-server -y &>>$LOG_FILE
 VALIDATE $? "Rabbitmq installation"
 
