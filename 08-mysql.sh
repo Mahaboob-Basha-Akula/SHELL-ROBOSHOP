@@ -18,6 +18,7 @@ USER_ID=$(id -u)
 
 if [ $USER_ID -ne 0 ]; then
     echo -e "ERROR:: $R Need root privilages $N"
+    exit 1
 fi
 
 VALIDATE(){
