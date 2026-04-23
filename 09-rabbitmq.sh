@@ -26,6 +26,7 @@ VALIDATE(){
     fi
 }
 
+mkdir -p $LOG_FOLDER
 
 dnf install rabbitmq-server -y &>>$LOG_FILE
 VALIDATE $? "Rabbitmq installation"
