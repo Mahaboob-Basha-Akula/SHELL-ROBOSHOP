@@ -11,7 +11,7 @@ P="\e[35m"
 LOG_FOLDER="/var/log/rabbitmq-shell"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
-SCRIPT_DIR=$($PWD)
+SCRIPT_DIR=$PWD
 
 USER_ID=$(id -u)
 if [ $USER_ID -ne 0 ]; then
