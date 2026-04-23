@@ -21,10 +21,10 @@ fi
 mkdir -p $LOG_FOLDER
 
 VALIDATE(){
-    if [ $? -ne 0 ]; then 
-        echo -e " $R Package install is FAILED $N"
+    if [ $1 -ne 0 ]; then 
+        echo -e " $R $2 is FAILED $N"
     else 
-        echo -e "$G Package install is SUCCESS $N"
+        echo -e "$G $2 is SUCCESS $N"
     fi
 }
 
