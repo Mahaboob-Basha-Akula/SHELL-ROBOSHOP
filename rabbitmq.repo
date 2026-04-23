@@ -1,62 +1,62 @@
-# [modern-erlang]
-# name=modern-erlang-el9
-# baseurl=https://yum1.novemberain.com/erlang/el/9/$basearch
-#         https://yum2.novemberain.com/erlang/el/9/$basearch
-#         https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-erlang/rpm/el/9/$basearch
-# enabled=1
-# gpgcheck=0
-
-# [modern-erlang-noarch]
-# name=modern-erlang-el9-noarch
-# baseurl=https://yum1.novemberain.com/erlang/el/9/noarch
-#         https://yum2.novemberain.com/erlang/el/9/noarch
-#         https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-erlang/rpm/el/9/noarch
-# enabled=1
-# gpgcheck=0
-
-# [modern-erlang-source]
-# name=modern-erlang-el9-source
-# baseurl=https://yum1.novemberain.com/erlang/el/9/SRPMS
-#         https://yum2.novemberain.com/erlang/el/9/SRPMS
-#         https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-erlang/rpm/el/9/SRPMS
-# enabled=1
-# gpgcheck=0
-
-# [rabbitmq-el9]
-# name=rabbitmq-el9
-# baseurl=https://yum2.novemberain.com/rabbitmq/el/9/$basearch
-#         https://yum1.novemberain.com/rabbitmq/el/9/$basearch
-#         https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-server/rpm/el/9/$basearch
-# enabled=1
-# gpgcheck=0
-
-# [rabbitmq-el9-noarch]
-# name=rabbitmq-el9-noarch
-# baseurl=https://yum2.novemberain.com/rabbitmq/el/9/noarch
-#         https://yum1.novemberain.com/rabbitmq/el/9/noarch
-#         https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-server/rpm/el/9/noarch
-# enabled=1
-# gpgcheck=0
-
-
-# Erlang repo
-sudo tee /etc/yum.repos.d/rabbitmq-erlang.repo <<EOF
-[rabbitmq-erlang]
-name=rabbitmq-erlang
-baseurl=https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-erlang/rpm/el/9/x86_64
-repo_gpgcheck=1
-gpgcheck=1
+[modern-erlang]
+name=modern-erlang-el9
+baseurl=https://yum1.novemberain.com/erlang/el/9/$basearch
+        https://yum2.novemberain.com/erlang/el/9/$basearch
+        https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-erlang/rpm/el/9/$basearch
 enabled=1
-gpgkey=https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-erlang/gpg.9D1A2BEB.asc
-EOF
+gpgcheck=0
 
-# RabbitMQ repo
-sudo tee /etc/yum.repos.d/rabbitmq.repo <<EOF
-[rabbitmq]
-name=rabbitmq
-baseurl=https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-server/rpm/el/9/x86_64
-repo_gpgcheck=1
-gpgcheck=1
+[modern-erlang-noarch]
+name=modern-erlang-el9-noarch
+baseurl=https://yum1.novemberain.com/erlang/el/9/noarch
+        https://yum2.novemberain.com/erlang/el/9/noarch
+        https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-erlang/rpm/el/9/noarch
 enabled=1
-gpgkey=https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-server/gpg.9D1A2BEB.asc
-EOF
+gpgcheck=0
+
+[modern-erlang-source]
+name=modern-erlang-el9-source
+baseurl=https://yum1.novemberain.com/erlang/el/9/SRPMS
+        https://yum2.novemberain.com/erlang/el/9/SRPMS
+        https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-erlang/rpm/el/9/SRPMS
+enabled=1
+gpgcheck=0
+
+[rabbitmq-el9]
+name=rabbitmq-el9
+baseurl=https://yum2.novemberain.com/rabbitmq/el/9/$basearch
+        https://yum1.novemberain.com/rabbitmq/el/9/$basearch
+        https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-server/rpm/el/9/$basearch
+enabled=1
+gpgcheck=0
+
+[rabbitmq-el9-noarch]
+name=rabbitmq-el9-noarch
+baseurl=https://yum2.novemberain.com/rabbitmq/el/9/noarch
+        https://yum1.novemberain.com/rabbitmq/el/9/noarch
+        https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-server/rpm/el/9/noarch
+enabled=1
+gpgcheck=0
+
+
+# # Erlang repo
+# sudo tee /etc/yum.repos.d/rabbitmq-erlang.repo <<EOF
+# [rabbitmq-erlang]
+# name=rabbitmq-erlang
+# baseurl=https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-erlang/rpm/el/9/x86_64
+# repo_gpgcheck=1
+# gpgcheck=1
+# enabled=1
+# gpgkey=https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-erlang/gpg.9D1A2BEB.asc
+# EOF
+
+# # RabbitMQ repo
+# sudo tee /etc/yum.repos.d/rabbitmq.repo <<EOF
+# [rabbitmq]
+# name=rabbitmq
+# baseurl=https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-server/rpm/el/9/x86_64
+# repo_gpgcheck=1
+# gpgcheck=1
+# enabled=1
+# gpgkey=https://dl.cloudsmith.io/public/rabbitmq/rabbitmq-server/gpg.9D1A2BEB.asc
+# EOF
